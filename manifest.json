@@ -1,0 +1,36 @@
+{
+    "name": "Remove ads",
+    "description": "Xóa quảng cáo trên trang ngoac.net",
+    "version": "1.0",
+    "browser_action": {
+        "default_icon": "images/icon-36x36.png",
+        "default_popup": "index.html"
+    },
+    "icons": { 
+        "36": "images/icon-36x36.png",
+        "128": "images/icon-128x128.png"
+    },
+    "permissions": [
+        "tabs",
+        "https://ngoac.net/"
+    ],
+    "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "js/jquery-3.3.1.js",
+            "js/remove-ads.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://ngoac.net/",
+                "https://ngoac.net/*"
+            ],
+            "js": [
+                "js/jquery-3.3.1.js",
+                "js/remove-ads.js"
+            ]
+        }
+    ]
+}
