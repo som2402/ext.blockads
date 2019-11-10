@@ -25,11 +25,15 @@
             $(".box_detail_video").addClass("hidechat");
             $(".box_detail_video_leftMenu").addClass("d-none");
             $(".box_detail_header").addClass("d-none");
-            setTimeout(() => {
+          
+            setInterval(() => {
                 $(".show-ads-banner").remove();
                 $(".divdatcuoc").remove();
                 $(".popup-ads-banner").remove();
-            }, 1500);
+                $(".adBot").addClass("d-none");
+                $(".adAboveBottom").addClass("d-none");
+                $(".adTop").addClass("d-none");
+            }, 1000);
         },
         clickViewRemoveAds: () => {
             $(".redirectA").click((e) => {
