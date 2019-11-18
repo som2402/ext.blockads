@@ -6,11 +6,12 @@
 
     const ui = {
         init: () => {
-            ui.removeAdsNgoacNet();
-            ui.clickViewRemoveAds();
+            ui.ngoacNetRemoveAds();
+            ui.ngoacNetClickViewRemoveAds();
+            ui.youtubeRemoveAds();
         },
-        removeAdsNgoacNet: () => {
-            console.log("fuck");
+        ngoacNetRemoveAds: () => {
+            console.log("ngoac.net");
             let dropDowns = Array.from(document.querySelectorAll('.center-banners > div'));
             dropDowns.forEach(node => {
                 node.remove();
@@ -25,7 +26,7 @@
             $(".box_detail_video").addClass("hidechat");
             $(".box_detail_video_leftMenu").addClass("d-none");
             $(".box_detail_header").addClass("d-none");
-          
+
             setInterval(() => {
                 $(".show-ads-banner").remove();
                 $(".divdatcuoc").remove();
@@ -35,12 +36,18 @@
                 $(".adTop").addClass("d-none");
             }, 1000);
         },
-        clickViewRemoveAds: () => {
+        ngoacNetClickViewRemoveAds: () => {
             $(".redirectA").click((e) => {
                 e.preventDefault();
                 var link = $(e.currentTarget).data("href");
                 location.href = link;
             });
+        },
+        youtubeRemoveAds: () => {
+            // var video = 'https://www.youtube-nocookie.com/v/' + $('.hide-skeleton').attr('video-id');
+            setInterval(() => {
+                $(".ytp-ad-skip-button").click();
+            }, 1000);
         }
     };
 

@@ -12,7 +12,8 @@
     },
     "permissions": [
         "tabs",
-        "https://ngoac.net/"
+        "https://ngoac.net/",
+        "https://www.youtube.com/"
     ],
     "manifest_version": 2,
     "background": {
@@ -25,7 +26,9 @@
         {
             "matches": [
                 "https://ngoac.net/",
-                "https://ngoac.net/*"
+                "https://ngoac.net/*",
+                "https://*.youtube.com/watch?*",
+                "https://youtube.com/watch?*"
             ],
             "js": [
                 "js/jquery-3.3.1.js",
