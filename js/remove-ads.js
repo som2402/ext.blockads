@@ -6,12 +6,25 @@
 
     const ui = {
         init: () => {
+            // var url_string = window.location.href;
+            // var url = new URL(url_string);
+            // switch (url.origin) {
+            //     case "https://www.youtube.com":
+            //         ui.youtubeRemoveAds();
+            //         break;
+            //     case "https://ngoac.net":
+            //             ui.youtubeRemoveAds();
+            //         ui.ngoacNetRemoveAds();
+            //         ui.ngoacNetClickViewRemoveAds();
+            //         break;
+            //     default:
+            //         break;
+            // }
+            ui.youtubeRemoveAds();
             ui.ngoacNetRemoveAds();
             ui.ngoacNetClickViewRemoveAds();
-            ui.youtubeRemoveAds();
         },
         ngoacNetRemoveAds: () => {
-            console.log("ngoac.net");
             let dropDowns = Array.from(document.querySelectorAll('.center-banners > div'));
             dropDowns.forEach(node => {
                 node.remove();
@@ -46,7 +59,10 @@
         youtubeRemoveAds: () => {
             // var video = 'https://www.youtube-nocookie.com/v/' + $('.hide-skeleton').attr('video-id');
             setInterval(() => {
-                $(".ytp-ad-skip-button").click();
+                $(".ytp-ad-skip-button-container").click();
+                $(".ytp-ad-skip-button-container").trigger("click");
+                $(".ytp-ad-overlay-slot").click();
+                return false;
             }, 1000);
         }
     };
