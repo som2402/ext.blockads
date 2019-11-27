@@ -56,14 +56,23 @@
                 location.href = link;
             });
         },
-        youtubeRemoveAds: () => {
+        youtubeRemoveAds: async () => {
             // var video = 'https://www.youtube-nocookie.com/v/' + $('.hide-skeleton').attr('video-id');
-            setInterval(() => {
+           setInterval(() => {
+                var skipAds = document.querySelector(".ytp-ad-skip-button-container");
+                // console.log(new Date().toLocaleString());
+                if (skipAds !== null && skipAds !== undefined) {
+                    document.querySelector('video').currentTime = document.querySelector('video').duration
+                    console.log(document.querySelector('video').currentTime);
+                    ui.sleep(5000);
+                }
                 $(".ytp-ad-skip-button-container").click();
                 $(".ytp-ad-skip-button-container").trigger("click");
                 $(".ytp-ad-overlay-slot").click();
-                return false;
-            }, 1000);
+            }, 2000);
+        },
+        sleep: (msec) => {
+            return new Promise(resolve => setTimeout(resolve, msec));
         }
     };
 
